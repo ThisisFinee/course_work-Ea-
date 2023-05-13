@@ -5,17 +5,9 @@ class Point:
     def __init__(self, num=0, way=[]):
         self.num = num
         self.way = way
-        # self.only_way = []
         self.prod()
-        # self.op_way()
-
     def prod(self):
         self.way[self.num] = 0
-
-    # def op_way(self):
-    #     for i in range(len(self.way)):
-    #         if self.way[i] > 0:
-    #             self.only_way.append(i) # Нужно было при реализации без наличия пути в любой город
 
 
 def way_len(way, mat):
@@ -58,20 +50,6 @@ def tour_select(ways, mat): #Tournament selection
         return new_ways
 
 
-
-
-
-# def true_way(way, arr):
-#     res = True
-#     for i in range(len(way)-1):
-#         if way[i+1] in arr[way[i]].only_way:
-#             res = True
-#         else:
-#             res = False
-#             break
-#     return res #нужно при реализации без всех путей
-
-
 def only_mas(arr, mas, sc):
     if sc == 0:
         return True
@@ -79,6 +57,7 @@ def only_mas(arr, mas, sc):
         return False
     else:
         return True
+
 
 def no_re_way(way, mas):#no repeat way
     res = []
@@ -105,16 +84,11 @@ def first_gen(var, n, start):
                 a[sc].append(r.choice(all_way_r))
                 all_way.append(a[sc][-1])
                 all_way_r = a_w
-                #all_way_r = arr[a[sc][-1]].only_way #Нужно при реализации без всех путей
         a[sc].append(start)
         if only_mas(a, a[sc], sc):
             sc+=1
         else:
             a[sc] = []
-        # if true_way(a[sc], arr) and a.count(a[sc]) == 1: # и опять реализация без всех путей
-        #     sc+=1
-        # else:
-        #     a[sc] = []
     return a
 
 
@@ -134,6 +108,7 @@ def Point_mat(n):
                 a[j] = arr[j].way[i]
             arr.append(Point(i, a))
     return arr
+
 
 def cross_gen(par1, par2):
     mid = (len(par1)//2)//2+1
@@ -169,21 +144,3 @@ def mutation_gen(par):
     mut_res = par[i]
     mut_res[i1], mut_res[i2] = mut_res[i2], mut_res[i1]
     return [mut_res, 1]
-# def cross_gen(par1, par2):
-#     mid = len(par1)//2
-#     child1 = [*par1[mid:-2]]
-#     child1_dub = child1
-#     par1_back = [*par1[1:mid]]
-#     child2 = [*par2[mid:-2]]
-#     par2_back = [*par2[1:mid]]
-#     child1 = [*child1, *no_re_way(child1, child2)]
-#     if len(child1) != len(par1)-2:
-#         child1 = [*child1, *no_re_way(child1, par2_back)]
-#     child2 = [*child2, *no_re_way(child2, child1_dub)]
-#     if len(child2) != len(par2)-2:
-#         child2 = [*child2, *no_re_way(child2, par1_back)]
-#     child1.insert(0, par1[-1])
-#     child1.append(par1[-1])
-#     child2.insert(0, par2[-1])
-#     child2.append(par2[-1])
-#     return [child1, child2]
