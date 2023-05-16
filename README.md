@@ -15,8 +15,9 @@
 + Написание механизма скрещивания
 + Написание механизма мутации
 + Написание GUI
-#Все файлы с кодом:
+-------
+# Все файлы с кодом:
 + Файл который нужно запускать - [main](https://github.com/ThisisFinee/course_work-Ea-/blob/b2d215c733da4ae09c6c67468fa4ab47fe6819d0/main.py) в нём содержится функция запуска GUI
 + Файл с задачей коммивояжёра и генетическим алгортмом - [conv](https://github.com/ThisisFinee/course_work-Ea-/blob/b2d215c733da4ae09c6c67468fa4ab47fe6819d0/conv.py)
-+ Файл с частичным перебором - 
++ Файл с частичным перебором - [Random_Brute_Force](https://github.com/ThisisFinee/course_work-Ea-/blob/b2d215c733da4ae09c6c67468fa4ab47fe6819d0/Random_Brute_Force.py)
 + Файл с GUI и графиком - [GUI](https://github.com/ThisisFinee/course_work-Ea-/blob/b2d215c733da4ae09c6c67468fa4ab47fe6819d0/GUI.py)
