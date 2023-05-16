@@ -2,6 +2,8 @@ import conv as c
 
 def Brute_Force(n, selection, first, start, mat):
     fir = selection*first
+    if fir > 10000:
+        fir = 10000
     way_mas = c.first_gen(fir, n, start)
     res_mas = []
     for i in range(len(way_mas)):

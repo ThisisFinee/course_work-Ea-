@@ -16,12 +16,11 @@ def distance_matrix(n, first, start):
     print_mat(mat)
     mas_gen = con.first_gen(first, n, start)
     # данные первичной популяции
-    print(mas_gen)
-    say = ""
+    # print(mas_gen)
+    say = []
     for ind in range(len(mas_gen)):
-        say = say + str(con.way_len(mas_gen[ind], mat)) + " "
-    print(say)
-    #
+        say.append(con.way_len(mas_gen[ind], mat))
+    # print(say)
     return [mas_gen, mat, say]
 
 
@@ -40,7 +39,7 @@ def result_gen(new_mas_gen, s1):
 if __name__ == '__main__':
 
     CHILD_CHANCE = 50
-    MUTATION_CHANCE = 5
+    MUTATION_CHANCE = 10
 
     n = int(input("Input number of points: "))
     start = int(input(f"Select a starting point(<{n}): "))
@@ -93,27 +92,34 @@ if __name__ == '__main__':
                 res_mut = con.mutation_gen(new_mas_gen)[0]
                 index_mut = con.mutation_gen(new_mas_gen)[1]
                 if res_mut not in new_mas_gen and con.way_len(res_mut, mat) <= con.way_len(new_mas_gen[index_mut], mat):
-                    print(con.way_len(res_mut, mat), con.way_len(new_mas_gen[index_mut], mat))
+                    # print(con.way_len(res_mut, mat), con.way_len(new_mas_gen[index_mut], mat))
                     new_mas_gen[index_mut] = res_mut
-                print(new_mas_gen, res_mut, index_mut)
-        print(new_mas_gen)
+        #         print(new_mas_gen, res_mut, index_mut)
+        # print(new_mas_gen)
         s1 = []
         for i in range(len(new_mas_gen)):
             s1.append(con.way_len(new_mas_gen[i], mat))
-        print(*s1)
+        #print(*s1)
+    print("Первичная популяция:")
     print(m[2])
+    print("Лучший результат первичной популяции:")
+    print(min(m[2]))
 
     brute = Brute_chance(n, selection, first, start, mat)
     brute_sum = brute[1]
     brute_way = brute[0]
+    print("Лучший путь найденный с помощью частичного случайного перебора:")
     print(brute_way)
+    print("Лучший результат найденный с помощью частичного перебора")
     print(brute_sum)
 
 
     res_gen = result_gen(new_mas_gen, s1)
     res_way = res_gen[0]
     res_sum = res_gen[1]
+    print("Лучший путь найденный с помощью генетического алгоритма:")
     print(res_way)
+    print("Результат работы генетического алгоритма:")
     print(res_sum)
     # s1 = ""
     # for i in range(len(new_mas_gen)):
