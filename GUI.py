@@ -139,10 +139,14 @@ class MainWindow(object):
         self.Result_Button.setText(_translate("MainWindow", "Результаты"))
 
     def Generate_func(self, MainWindow):
+        if not self.line_num.text() or not self.line_start.text() or not self.line_first.text()\
+                or not self.line_selection.text() or int(self.line_start.text())>int(self.line_num.text()):
+            return 0
         n = int(self.line_num.text())
         start = int(self.line_start.text())
         first = int(self.line_first.text())
         selection = int(self.line_selection.text())
+        print(n, start, first, selection)
         poi_mat = con.Point_mat(n)
         mas_gen = con.first_gen(first, n, start)
         dis = self.distance_matrix(poi_mat, mas_gen)
@@ -289,6 +293,8 @@ class MainWindow(object):
 
 
 class Result(object):
+    def __init__(self, flag1 = 0):
+        self.flag = flag1
 
     def setup(self, Result):
         Result.setObjectName("Result")
@@ -312,7 +318,10 @@ class Result(object):
         font.setPointSize(10)
         self.res_first_label.setFont(font)
         self.res_first_label.setStyleSheet("color: rgb(255, 255, 255);")
-        self.res_first_label.setText(str(mer1[0]))
+        if self.flag == 1:
+            self.res_first_label.setText(str(mer1[0]))
+        else:
+            self.res_first_label.setText("Сгенерируйте первичную популяцию!")
         self.res_first_label.setObjectName("res_first_label")
         self.label_2 = QtWidgets.QLabel(self.frame)
         self.label_2.setGeometry(QtCore.QRect(20, 100, 341, 31))
@@ -327,7 +336,10 @@ class Result(object):
         font.setPointSize(10)
         self.res_brute_label.setFont(font)
         self.res_brute_label.setStyleSheet("color: rgb(255, 255, 255);")
-        self.res_brute_label.setText(str(mer1[1]))
+        if self.flag == 1:
+            self.res_brute_label.setText(str(mer1[1]))
+        else:
+            self.res_brute_label.setText("Сгенерируйте результат перебора!")
         self.res_brute_label.setObjectName("res_brute_label")
         self.label_3 = QtWidgets.QLabel(self.frame)
         self.label_3.setGeometry(QtCore.QRect(20, 185, 341, 31))
@@ -342,7 +354,10 @@ class Result(object):
         font.setPointSize(10)
         self.res_gen_label.setFont(font)
         self.res_gen_label.setStyleSheet("color: rgb(255, 255, 255);")
-        self.res_gen_label.setText(str(mer1[2]))
+        if self.flag == 1:
+            self.res_gen_label.setText(str(mer1[2]))
+        else:
+            self.res_gen_label.setText("Сгенерируйте результат ГА")
         self.res_gen_label.setObjectName("res_gen_label")
 
         self.retranslate(Result)

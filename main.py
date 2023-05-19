@@ -13,7 +13,10 @@ if __name__ == '__main__':
     def Result_Out():
         global Resul
         Resul = GUI.QtWidgets.QDialog()
-        result = GUI.Result()
+        if main.mer!=[0, 0, 0]:
+            result = GUI.Result(1)
+        else:
+            result = GUI.Result(0)
         result.setup(Resul)
         Resul.show()
 
