@@ -27,18 +27,8 @@ class MainWindow(object):
         MainWindow.setMaximumSize(QtCore.QSize(361, 600))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.Generate_button = QtWidgets.QPushButton(self.centralwidget)
-        self.Generate_button.setGeometry(QtCore.QRect(90, 240, 171, 51))
-        self.Generate_button.setStyleSheet("color:white;\n"
-                                           "border-top-left-radius: 14px;\n"
-                                           "border-top-right-radius: 14px;\n"
-                                           "border-bottom-left-radius: 14px;\n"
-                                           "border-bottom-right-radius: 14px;\n"
-                                           "background-color:rgb(255, 170, 0);")
-        self.Generate_button.setObjectName("Generate_button")
-        self.Generate_button.clicked.connect(self.Generate_func)
         self.line_num = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_num.setGeometry(QtCore.QRect(20, 31, 311, 31))
+        self.line_num.setGeometry(QtCore.QRect(20, 30, 311, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.line_num.setFont(font)
@@ -87,22 +77,20 @@ class MainWindow(object):
         self.line_selection.setObjectName("line_selection")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 0, 361, 601))
-        self.frame.setStyleSheet("background-color: rgb(255, 60, 60);\n"
-                                 "border-top-left-radius: 14px;\n"
-                                 "border-top-right-radius: 14px;")
+        self.frame.setStyleSheet("background-color: rgb(255, 60, 60)")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.frame_2 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_2.setGeometry(QtCore.QRect(80, 230, 191, 371))
+        self.frame_2 = QtWidgets.QFrame(self.frame)
+        self.frame_2.setGeometry(QtCore.QRect(80, 340, 201, 261))
         self.frame_2.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-                                   "border-top-left-radius: 14px;\n"
-                                   "border-top-right-radius: 14px;")
+                                   "border-top-left-radius: 10px;\n"
+                                   "border-top-right-radius: 10px;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.Result_Button = QtWidgets.QPushButton(self.frame_2)
-        self.Result_Button.setGeometry(QtCore.QRect(10, 70, 171, 51))
+        self.Result_Button.setGeometry(QtCore.QRect(15, 80, 171, 51))
         self.Result_Button.setStyleSheet("color:white;\n"
                                          "border-top-left-radius: 14px;\n"
                                          "border-top-right-radius: 14px;\n"
@@ -111,46 +99,88 @@ class MainWindow(object):
                                          "background-color:rgb(255, 170, 0);")
         self.Result_Button.setObjectName("Result_Button")
         self.cat = QtWidgets.QLabel(self.frame_2)
-        self.cat.setGeometry(QtCore.QRect(50, 140, 101, 101))
+        self.cat.setGeometry(QtCore.QRect(50, 150, 101, 101))
         self.cat.setText("")
         main_path = os.getcwd()
         self.cat.setPixmap(QtGui.QPixmap(main_path + "/kot.jpg"))
         self.cat.setObjectName("cat")
+        self.Generate_button = QtWidgets.QPushButton(self.frame_2)
+        self.Generate_button.setGeometry(QtCore.QRect(15, 20, 171, 51))
+        self.Generate_button.setStyleSheet("color:white;\n"
+                                           "border-top-left-radius: 14px;\n"
+                                           "border-top-right-radius: 14px;\n"
+                                           "border-bottom-left-radius: 14px;\n"
+                                           "border-bottom-right-radius: 14px;\n"
+                                           "background-color:rgb(255, 170, 0);")
+        self.Generate_button.setObjectName("Generate_button")
+        self.Generate_button.clicked.connect(self.Generate_func)
+        self.line_child = QtWidgets.QLineEdit(self.frame)
+        self.line_child.setGeometry(QtCore.QRect(20, 230, 311, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.line_child.setFont(font)
+        self.line_child.setStyleSheet("background-color: #22222e;\n"
+                                      "border-top-left-radius: 10px;\n"
+                                      "border-top-right-radius: 10px;\n"
+                                      "border-bottom-left-radius: 10px;\n"
+                                      "border-bottom-right-radius: 10px;\n"
+                                      "color: white;")
+        self.line_child.setObjectName("line_child")
+        self.line_mutation = QtWidgets.QLineEdit(self.frame)
+        self.line_mutation.setGeometry(QtCore.QRect(20, 280, 311, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.line_mutation.setFont(font)
+        self.line_mutation.setStyleSheet("background-color: #22222e;\n"
+                                         "border-top-left-radius: 10px;\n"
+                                         "border-top-right-radius: 10px;\n"
+                                         "border-bottom-left-radius: 10px;\n"
+                                         "border-bottom-right-radius: 10px;\n"
+                                         "color: white;")
+        self.line_mutation.setObjectName("line_mutation")
         self.frame.raise_()
         self.line_num.raise_()
         self.line_selection.raise_()
         self.line_start.raise_()
-        self.frame_2.raise_()
-        self.Generate_button.raise_()
         self.line_first.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslate(MainWindow)
+        self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslate(self, MainWindow):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Genetic algorithm"))
-        self.Generate_button.setText(_translate("MainWindow", "Генерация"))
         self.line_num.setPlaceholderText(_translate("MainWindow", "Введите количество городов"))
         self.line_start.setPlaceholderText(_translate("MainWindow", "Введите точку старта"))
         self.line_first.setPlaceholderText(_translate("MainWindow", "Размер первичной популяции"))
         self.line_selection.setPlaceholderText(_translate("MainWindow", "Введите количество отборов"))
-        self.Result_Button.setText(_translate("MainWindow", "Результаты"))
+        self.Result_Button.setText(_translate("MainWindow", "Result"))
+        self.Generate_button.setText(_translate("MainWindow", "Generate"))
+        self.line_child.setPlaceholderText(_translate("MainWindow", "Введите шанс на ребёнка"))
+        self.line_mutation.setPlaceholderText(_translate("MainWindow", "Введите шанс мутации"))
 
     def Generate_func(self, MainWindow):
-        if not self.line_num.text() or not self.line_start.text() or not self.line_first.text()\
-                or not self.line_selection.text() or int(self.line_start.text())>int(self.line_num.text()):
+        if not self.line_num.text() or not self.line_start.text() or not self.line_first.text() \
+                or not self.line_selection.text() or int(self.line_start.text()) >= int(self.line_num.text()):
             return 0
         n = int(self.line_num.text())
         start = int(self.line_start.text())
         first = int(self.line_first.text())
         selection = int(self.line_selection.text())
-        print(n, start, first, selection)
+        if not self.line_child.text():
+            child = 50
+        else:
+            child = int(self.line_child.text())
+        if not self.line_mutation.text():
+            mutation = 10
+        else:
+            mutation = int(self.line_mutation.text())
+        print(n, start, first, selection, child, mutation)
         poi_mat = con.Point_mat(n)
         mas_gen = con.first_gen(first, n, start)
         dis = self.distance_matrix(poi_mat, mas_gen)
-        self.mer = self.main_func(n, start, first, selection, dis)
+        self.mer = self.main_func(n, start, first, selection, dis, child, mutation)
         Search(self.mer)
         return self.mer
 
@@ -183,10 +213,10 @@ class MainWindow(object):
         res_sum = s1[res_ind]
         return [res_way, res_sum]
 
-    def main_func(self, n1, start1, first1, selection1, m1):
+    def main_func(self, n1, start1, first1, selection1, m1, child_chance, mutation_chance):
 
-        CHILD_CHANCE = 50
-        MUTATION_CHANCE = 10
+        CHILD_CHANCE = child_chance
+        MUTATION_CHANCE = mutation_chance
 
         # n = int(input("Input number of points: "))
         # start = int(input(f"Select a starting point(<{n}): "))
@@ -291,9 +321,8 @@ class MainWindow(object):
         return [min(m[2]), brute_sum, res_sum]
 
 
-
 class Result(object):
-    def __init__(self, flag1 = 0):
+    def __init__(self, flag1=0):
         self.flag = flag1
 
     def setup(self, Result):
