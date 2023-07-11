@@ -20,6 +20,8 @@ class MainWindow(object):
 
     def setup(self, MainWindow):
         self.mer = [0, 0, 0]
+        pol_path = os.getcwd()
+        pol_image = QtGui.QPixmap(pol_path + "/pol.jpg")
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
         MainWindow.resize(361, 600)
@@ -28,114 +30,109 @@ class MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.line_num = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_num.setGeometry(QtCore.QRect(20, 30, 311, 31))
+        self.line_num.setGeometry(QtCore.QRect(20, 220, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.line_num.setFont(font)
-        self.line_num.setStyleSheet("background-color: #22222e;\n"
-                                    "border-top-left-radius: 10px;\n"
-                                    "border-top-right-radius: 10px;\n"
-                                    "border-bottom-left-radius: 10px;\n"
-                                    "border-bottom-right-radius: 10px;\n"
+        self.line_num.setStyleSheet("background-color: rgb(133, 147, 156);\n"
+                                    "border-top-left-radius: 0px;\n"
+                                    "border-top-right-radius: 0px;\n"
+                                    "border-bottom-left-radius: 0px;\n"
+                                    "border-bottom-right-radius: 0px;\n"
                                     "color: white;")
         self.line_num.setObjectName("line_num")
         self.line_start = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_start.setGeometry(QtCore.QRect(20, 80, 311, 31))
+        self.line_start.setGeometry(QtCore.QRect(20, 260, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.line_start.setFont(font)
-        self.line_start.setStyleSheet("background-color: #22222e;\n"
-                                      "border-top-left-radius: 10px;\n"
-                                      "border-top-right-radius: 10px;\n"
-                                      "border-bottom-left-radius: 10px;\n"
-                                      "border-bottom-right-radius: 10px;\n"
+        self.line_start.setStyleSheet("background-color: rgb(133, 147, 156);\n"
+                                      "border-top-left-radius: 0px;\n"
+                                      "border-top-right-radius: 0px;\n"
+                                      "border-bottom-left-radius: 0px;\n"
+                                      "border-bottom-right-radius: 0px;\n"
                                       "color: white;")
         self.line_start.setObjectName("line_start")
         self.line_first = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_first.setGeometry(QtCore.QRect(20, 130, 311, 31))
+        self.line_first.setGeometry(QtCore.QRect(20, 300, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.line_first.setFont(font)
-        self.line_first.setStyleSheet("background-color: #22222e;\n"
-                                      "border-top-left-radius: 10px;\n"
-                                      "border-top-right-radius: 10px;\n"
-                                      "border-bottom-left-radius: 10px;\n"
-                                      "border-bottom-right-radius: 10px;\n"
+        self.line_first.setStyleSheet("background-color: rgb(133, 147, 156);\n"
+                                      "border-top-left-radius: 0px;\n"
+                                      "border-top-right-radius: 0px;\n"
+                                      "border-bottom-left-radius: 0px;\n"
+                                      "border-bottom-right-radius: 0px;\n"
                                       "color: white;")
         self.line_first.setObjectName("line_first")
         self.line_selection = QtWidgets.QLineEdit(self.centralwidget)
-        self.line_selection.setGeometry(QtCore.QRect(20, 180, 311, 31))
+        self.line_selection.setGeometry(QtCore.QRect(20, 340, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.line_selection.setFont(font)
-        self.line_selection.setStyleSheet("background-color: #22222e;\n"
-                                          "border-top-left-radius: 10px;\n"
-                                          "border-top-right-radius: 10px;\n"
-                                          "border-bottom-left-radius: 10px;\n"
-                                          "border-bottom-right-radius: 10px;\n"
+        self.line_selection.setStyleSheet("background-color: rgb(133, 147, 156);\n"
+                                          "border-top-left-radius: 0px;\n"
+                                          "border-top-right-radius: 0px;\n"
+                                          "border-bottom-left-radius: 0px;\n"
+                                          "border-bottom-right-radius: 0px;\n"
                                           "color: white;")
         self.line_selection.setObjectName("line_selection")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 0, 361, 601))
-        self.frame.setStyleSheet("background-color: rgb(255, 60, 60)")
+        print(pol_image)
+        self.frame.setStyleSheet("background-image: url(pol.jpg)")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setGeometry(QtCore.QRect(80, 340, 201, 261))
-        self.frame_2.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-                                   "border-top-left-radius: 10px;\n"
-                                   "border-top-right-radius: 10px;")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.Result_Button = QtWidgets.QPushButton(self.frame_2)
-        self.Result_Button.setGeometry(QtCore.QRect(15, 80, 171, 51))
+        # self.frame_2 = QtWidgets.QFrame(self.frame)
+        # self.frame_2.setGeometry(QtCore.QRect(80, 340, 201, 261))
+        # self.frame_2.setStyleSheet("background-color: rgb(0, 0, 0);\n"
+        #                            "border-top-left-radius: 10px;\n"
+        #                            "border-top-right-radius: 10px;")
+        # self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        # self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        # self.frame_2.setObjectName("frame_2")
+        self.Result_Button = QtWidgets.QPushButton(self.centralwidget)
+        self.Result_Button.setGeometry(QtCore.QRect(100, 530, 171, 51))
         self.Result_Button.setStyleSheet("color:white;\n"
-                                         "border-top-left-radius: 14px;\n"
-                                         "border-top-right-radius: 14px;\n"
-                                         "border-bottom-left-radius: 14px;\n"
-                                         "border-bottom-right-radius: 14px;\n"
-                                         "background-color:rgb(255, 170, 0);")
+                                         "border-top-left-radius: 0px;\n"
+                                         "border-top-right-radius: 0px;\n"
+                                         "border-bottom-left-radius: 0px;\n"
+                                         "border-bottom-right-radius: 0px;\n"
+                                         "background-color:rgb(99, 116, 124);")
         self.Result_Button.setObjectName("Result_Button")
-        self.cat = QtWidgets.QLabel(self.frame_2)
-        self.cat.setGeometry(QtCore.QRect(50, 150, 101, 101))
-        self.cat.setText("")
-        main_path = os.getcwd()
-        self.cat.setPixmap(QtGui.QPixmap(main_path + "/kot.jpg"))
-        self.cat.setObjectName("cat")
-        self.Generate_button = QtWidgets.QPushButton(self.frame_2)
-        self.Generate_button.setGeometry(QtCore.QRect(15, 20, 171, 51))
+        self.Generate_button = QtWidgets.QPushButton(self.centralwidget)
+        self.Generate_button.setGeometry(QtCore.QRect(100, 470, 171, 51))
         self.Generate_button.setStyleSheet("color:white;\n"
-                                           "border-top-left-radius: 14px;\n"
-                                           "border-top-right-radius: 14px;\n"
-                                           "border-bottom-left-radius: 14px;\n"
-                                           "border-bottom-right-radius: 14px;\n"
-                                           "background-color:rgb(255, 170, 0);")
+                                           "border-top-left-radius: 0px;\n"
+                                           "border-top-right-radius: 0px;\n"
+                                           "border-bottom-left-radius: 0px;\n"
+                                           "border-bottom-right-radius: 0px;\n"
+                                           "background-color:rgb(99, 116, 124);")
         self.Generate_button.setObjectName("Generate_button")
         self.Generate_button.clicked.connect(self.Generate_func)
-        self.line_child = QtWidgets.QLineEdit(self.frame)
-        self.line_child.setGeometry(QtCore.QRect(20, 230, 311, 31))
+        self.line_child = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_child.setGeometry(QtCore.QRect(20, 380, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.line_child.setFont(font)
-        self.line_child.setStyleSheet("background-color: #22222e;\n"
-                                      "border-top-left-radius: 10px;\n"
-                                      "border-top-right-radius: 10px;\n"
-                                      "border-bottom-left-radius: 10px;\n"
-                                      "border-bottom-right-radius: 10px;\n"
+        self.line_child.setStyleSheet("background-color: rgb(133, 147, 156);\n"
+                                      "border-top-left-radius: 0px;\n"
+                                      "border-top-right-radius: 0px;\n"
+                                      "border-bottom-left-radius: 0px;\n"
+                                      "border-bottom-right-radius: 0px;\n"
                                       "color: white;")
         self.line_child.setObjectName("line_child")
-        self.line_mutation = QtWidgets.QLineEdit(self.frame)
-        self.line_mutation.setGeometry(QtCore.QRect(20, 280, 311, 31))
+        self.line_mutation = QtWidgets.QLineEdit(self.centralwidget)
+        self.line_mutation.setGeometry(QtCore.QRect(20, 420, 221, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.line_mutation.setFont(font)
-        self.line_mutation.setStyleSheet("background-color: #22222e;\n"
-                                         "border-top-left-radius: 10px;\n"
-                                         "border-top-right-radius: 10px;\n"
-                                         "border-bottom-left-radius: 10px;\n"
-                                         "border-bottom-right-radius: 10px;\n"
+        self.line_mutation.setStyleSheet("background-color: rgb(133, 147, 156);\n"
+                                         "border-top-left-radius: 0px;\n"
+                                         "border-top-right-radius: 0px;\n"
+                                         "border-bottom-left-radius: 0px;\n"
+                                         "border-bottom-right-radius: 0px;\n"
                                          "color: white;")
         self.line_mutation.setObjectName("line_mutation")
         self.frame.raise_()
@@ -143,6 +140,11 @@ class MainWindow(object):
         self.line_selection.raise_()
         self.line_start.raise_()
         self.line_first.raise_()
+        self.line_child.raise_()
+        self.line_mutation.raise_()
+        self.Generate_button.raise_()
+        self.Result_Button.raise_()
+
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -151,14 +153,14 @@ class MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Genetic algorithm"))
-        self.line_num.setPlaceholderText(_translate("MainWindow", "Введите количество городов"))
-        self.line_start.setPlaceholderText(_translate("MainWindow", "Введите точку старта"))
-        self.line_first.setPlaceholderText(_translate("MainWindow", "Размер первичной популяции"))
-        self.line_selection.setPlaceholderText(_translate("MainWindow", "Введите количество отборов"))
+        self.line_num.setPlaceholderText(_translate("MainWindow", "Количество городов"))
+        self.line_start.setPlaceholderText(_translate("MainWindow", "Точка старта"))
+        self.line_first.setPlaceholderText(_translate("MainWindow", "Первичная популяция"))
+        self.line_selection.setPlaceholderText(_translate("MainWindow", "Количество отборов"))
         self.Result_Button.setText(_translate("MainWindow", "Result"))
         self.Generate_button.setText(_translate("MainWindow", "Generate"))
-        self.line_child.setPlaceholderText(_translate("MainWindow", "Введите шанс на ребёнка"))
-        self.line_mutation.setPlaceholderText(_translate("MainWindow", "Введите шанс мутации"))
+        self.line_child.setPlaceholderText(_translate("MainWindow", "Шанс на ребёнка"))
+        self.line_mutation.setPlaceholderText(_translate("MainWindow", "Шанс мутации"))
 
     def Generate_func(self, MainWindow):
         if not self.line_num.text() or not self.line_start.text() or not self.line_first.text() \
