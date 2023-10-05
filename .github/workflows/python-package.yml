@@ -43,5 +43,5 @@ jobs:
           name: Exe
           path: |
             main.exe
-            D:\a\CreatePipeline\CreatePipeline\dist\ex-3.exe
+            D:\a\CreatePipeline\CreatePipeline\dist\main.exe
             
