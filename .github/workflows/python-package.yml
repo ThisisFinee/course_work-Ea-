@@ -27,12 +27,12 @@ jobs:
       - name: use pyinstaller
         run: |
           pyinstaller --onefile main.py
-      - name: Path exe
-        uses: actions/upload-artifact@v3
-        with:
-          name: Path to exe
-          path: |
-            main.spec
+      # - name: Path exe
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: Path to exe
+      #     path: |
+      #       main.spec
       - name: go next
         run: |
           cd dist
