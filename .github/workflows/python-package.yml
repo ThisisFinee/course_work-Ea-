@@ -1,0 +1,47 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Build and test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+    
+
+
+jobs:
+ 
+  exe_builder:
+   
+    runs-on: windows-latest
+
+  
+    steps:
+    
+      - uses: actions/checkout@v3
+      - name: install pyinstaller
+        run: pip install pyinstaller
+      - name: use pyinstaller
+        run: |
+          pyinstaller --onefile main.py
+      - name: Path exe
+        uses: actions/upload-artifact@v3
+        with:
+          name: Path to exe
+          path: |
+            main.spec
+      - name: go next
+        run: |
+          cd dist
+          dir
+      - name: Exe in
+        uses: actions/upload-artifact@v3
+        with:
+          name: Exe
+          path: |
+            main.exe
+            D:\a\CreatePipeline\CreatePipeline\dist\ex-3.exe
+            
