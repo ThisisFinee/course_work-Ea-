@@ -43,5 +43,5 @@ jobs:
           name: Exe
           path: |
             main.exe
-            D:\a\CreatePipeline\CreatePipeline\dist\main.exe
+            D:\a\course_work-Ea-\course_work-Ea-\dist
             
