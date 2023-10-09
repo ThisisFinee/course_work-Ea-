@@ -26,7 +26,7 @@ jobs:
         run: pip install pyinstaller
       - name: use pyinstaller
         run: |
-          pyinstaller --onefile main.py
+          pyinstaller --noconsole --onefile main.py
       # - name: Path exe
       #   uses: actions/upload-artifact@v3
       #   with:
@@ -44,4 +44,11 @@ jobs:
           path: |
             main.exe
             D:\a\course_work-Ea-\course_work-Ea-\dist
+      - name: Picture
+        uses: actions/upload-artifact@v3
+        with:
+          name: Jpg
+          path: |
+            pol.jpg
+            D:\a\course_work-Ea-\course_work-Ea-
             
